@@ -4,6 +4,7 @@ import com.enterprise.datalifecyclemanager.model.Customer;
 import com.enterprise.datalifecyclemanager.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.enterprise.datalifecyclemanager.service.AuditService;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +13,9 @@ import java.util.Optional;
 public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
+
+    @Autowired
+    private AuditService auditService;
 
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
@@ -22,7 +26,9 @@ public class CustomerService {
     }
 
     public Customer createCustomer(Customer customer) {
-        return customerRepository.save(customer);
+        Customer saved = customerRepository.save(customer);
+        auditService.logAction("Customer Created", saved.getId(), "Created customer: " + saved.getEmail());
+        return saved;
     }
 
     public Customer updateCustomer(Long id, Customer updatedCustomer) {
@@ -32,11 +38,16 @@ public class CustomerService {
             customer.setEmail(updatedCustomer.getEmail());
             customer.setSsn(updatedCustomer.getSsn());
             customer.setStatus(updatedCustomer.getStatus());
-            return customerRepository.save(customer);
+            Customer saved = customerRepository.save(customer);
+            auditService.logAction("Customer Updated", saved.getId(), "Updated customer: " + saved.getEmail());
+            return saved;
         }).orElse(null);
     }
 
     public void deleteCustomer(Long id) {
-        customerRepository.deleteById(id);
+        customerRepository.findById(id).ifPresent(customer -> {
+            customerRepository.deleteById(id);
+            auditService.logAction("Customer Deleted", id, "Deleted customer: " + customer.getEmail());
+        });
     }
 }
