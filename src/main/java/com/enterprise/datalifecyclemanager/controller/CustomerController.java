@@ -2,6 +2,7 @@ package com.enterprise.datalifecyclemanager.controller;
 
 import com.enterprise.datalifecyclemanager.model.Customer;
 import com.enterprise.datalifecyclemanager.service.CustomerService;
+import com.enterprise.datalifecyclemanager.service.ArchiveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,9 @@ import java.util.Optional;
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
+
+    @Autowired
+    private ArchiveService archiveService;
 
     @GetMapping
     public List<Customer> getAllCustomers() {
@@ -44,5 +48,27 @@ public class CustomerController {
     public ResponseEntity<Void> deleteCustomer(@PathVariable Long id) {
         customerService.deleteCustomer(id);
         return ResponseEntity.noContent().build();
+    }
+
+    // Archive a customer
+    @PostMapping("/{id}/archive")
+    public ResponseEntity<String> archiveCustomer(@PathVariable Long id, @RequestParam(defaultValue = "Manual archive") String reason) {
+        boolean archived = archiveService.archiveCustomer(id, reason);
+        if (archived) {
+            return ResponseEntity.ok("Customer archived successfully.");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    // Restore an archived customer
+    @PostMapping("/restore/{archivedId}")
+    public ResponseEntity<String> restoreCustomer(@PathVariable Long archivedId) {
+        boolean restored = archiveService.restoreCustomer(archivedId);
+        if (restored) {
+            return ResponseEntity.ok("Customer restored successfully.");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
