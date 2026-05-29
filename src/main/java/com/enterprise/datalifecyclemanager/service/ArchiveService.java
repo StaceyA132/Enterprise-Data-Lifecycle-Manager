@@ -11,6 +11,9 @@ import com.enterprise.datalifecyclemanager.service.AuditService;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+import java.util.List;
+import org.springframework.scheduling.annotation.Scheduled;
+
 @Service
 public class ArchiveService {
     @Autowired
@@ -20,6 +23,21 @@ public class ArchiveService {
 
     @Autowired
     private AuditService auditService;
+
+    // Scheduled job: archive customers inactive for over a year, runs nightly at 2 AM
+    @Scheduled(cron = "0 0 2 * * *")
+    public void archiveInactiveCustomersJob() {
+        LocalDateTime oneYearAgo = LocalDateTime.now().minusYears(1);
+        List<Customer> inactiveCustomers = customerRepository.findAll().stream()
+            .filter(c -> c.getStatus().equalsIgnoreCase("inactive") && c.getCreatedAt().isBefore(oneYearAgo))
+            .toList();
+        for (Customer customer : inactiveCustomers) {
+            archiveCustomer(customer.getId(), "Scheduled archive: inactive > 1 year");
+        }
+        if (!inactiveCustomers.isEmpty()) {
+            auditService.logAction("Scheduled Archive Job", null, "Archived " + inactiveCustomers.size() + " inactive customers.");
+        }
+    }
 
     public boolean archiveCustomer(Long customerId, String reason) {
         Optional<Customer> customerOpt = customerRepository.findById(customerId);

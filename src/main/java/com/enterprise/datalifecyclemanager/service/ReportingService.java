@@ -40,7 +40,7 @@ public class ReportingService {
             LocalDate end = ym.atEndOfMonth();
             long count = auditLogRepository.countByActionAndTimestampBetween(
                 "Customer Archived",
-                start.atStartOfDay(ZoneId.systemDefault()),
+                start.atStartOfDay(ZoneId.systemDefault()).toLocalDateTime(),
                 end.atTime(23,59,59).atZone(ZoneId.systemDefault()).toLocalDateTime()
             );
             result.put(ym.toString(), count);
@@ -56,7 +56,7 @@ public class ReportingService {
             LocalDate end = ym.atEndOfMonth();
             long count = auditLogRepository.countByActionAndTimestampBetween(
                 "Customer Restored",
-                start.atStartOfDay(ZoneId.systemDefault()),
+                start.atStartOfDay(ZoneId.systemDefault()).toLocalDateTime(),
                 end.atTime(23,59,59).atZone(ZoneId.systemDefault()).toLocalDateTime()
             );
             result.put(ym.toString(), count);
