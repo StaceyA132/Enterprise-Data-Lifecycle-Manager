@@ -1,0 +1,9 @@
+/Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/controller/CustomerController.java
+/Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/DataLifecycleManagerApplication.java
+/Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/model/Customer.java
+/Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/model/ArchivedCustomer.java
+/Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/repository/AuditLogRepository.java
+/Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/repository/CustomerRepository.java
+/Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/repository/ArchivedCustomerRepository.java
+/Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/model/AuditLog.java
+/Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/service/CustomerService.java

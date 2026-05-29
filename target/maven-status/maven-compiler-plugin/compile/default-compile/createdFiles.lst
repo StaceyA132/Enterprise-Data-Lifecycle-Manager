@@ -1,0 +1,9 @@
+com/enterprise/datalifecyclemanager/controller/CustomerController.class
+com/enterprise/datalifecyclemanager/service/CustomerService.class
+com/enterprise/datalifecyclemanager/repository/CustomerRepository.class
+com/enterprise/datalifecyclemanager/repository/AuditLogRepository.class
+com/enterprise/datalifecyclemanager/model/ArchivedCustomer.class
+com/enterprise/datalifecyclemanager/repository/ArchivedCustomerRepository.class
+com/enterprise/datalifecyclemanager/DataLifecycleManagerApplication.class
+com/enterprise/datalifecyclemanager/model/Customer.class
+com/enterprise/datalifecyclemanager/model/AuditLog.class
