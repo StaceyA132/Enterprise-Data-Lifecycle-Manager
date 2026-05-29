@@ -5,6 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
+import java.time.LocalDateTime;
+
 public interface AuditLogRepository extends JpaRepository<AuditLog, Long> {
-    // Add custom query methods if needed
+    long countByAction(String action);
+    long countByActionAndTimestampBetween(String action, LocalDateTime start, LocalDateTime end);
 }
