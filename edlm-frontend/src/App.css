@@ -1,3 +1,31 @@
+/* Edit and Delete button styles */
+.edit-btn {
+  background: #0288d1;
+  color: #fff;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.edit-btn:hover {
+  background: #0277bd;
+}
+.delete-btn {
+  background: #b00020;
+  color: #fff;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.delete-btn:hover {
+  background: #d32f2f;
+}
 /* Add Customer Modal Styles */
 .modal-backdrop {
   position: fixed;
