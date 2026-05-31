@@ -10,7 +10,7 @@ function Login({ onLogin }) {
     e.preventDefault();
     setError("");
     try {
-      const response = await fetch("http://localhost:8080/api/auth/login", {
+      const response = await fetch("http://localhost:8081/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -19,6 +19,10 @@ function Login({ onLogin }) {
       });
       const data = await response.json();
       if (response.ok && data.status === "success") {
+        if (data.token) {
+          localStorage.setItem("authToken", data.token);
+        }
+        console.log("DEBUG: Login successful, switching to dashboard");
         onLogin && onLogin(email);
       } else {
         setError("Invalid email or password");

@@ -14,7 +14,7 @@ public class AuthController {
         if ("admin@example.com".equals(request.getEmail()) && "password123".equals(request.getPassword())) {
             return ResponseEntity.ok(new LoginResponse("success", "dummy-token-123"));
         } else {
-            return ResponseEntity.status(401).body(new LoginResponse("failure", null));
+            return ResponseEntity.ok(new LoginResponse("fail", null));
         }
     }
 }
