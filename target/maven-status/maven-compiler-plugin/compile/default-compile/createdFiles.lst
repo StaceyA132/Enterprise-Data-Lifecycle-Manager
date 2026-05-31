@@ -9,8 +9,11 @@ com/enterprise/datalifecyclemanager/repository/ArchivedCustomerRepository.class
 com/enterprise/datalifecyclemanager/model/Customer.class
 com/enterprise/datalifecyclemanager/service/PrivacyService.class
 com/enterprise/datalifecyclemanager/service/AuditService.class
+com/enterprise/datalifecyclemanager/model/LoginResponse.class
 com/enterprise/datalifecyclemanager/controller/ReportingController.class
 com/enterprise/datalifecyclemanager/service/ArchiveService.class
+com/enterprise/datalifecyclemanager/controller/AuthController.class
 com/enterprise/datalifecyclemanager/DataLifecycleManagerApplication.class
+com/enterprise/datalifecyclemanager/model/LoginRequest.class
 com/enterprise/datalifecyclemanager/service/ReportingService.class
 com/enterprise/datalifecyclemanager/model/AuditLog.class

@@ -4,6 +4,7 @@
 /Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/repository/AuditLogRepository.java
 /Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/controller/ReportingController.java
 /Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/repository/CustomerRepository.java
+/Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/model/LoginResponse.java
 /Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/service/PrivacyService.java
 /Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/model/AuditLog.java
 /Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/service/ReportingService.java
@@ -11,6 +12,8 @@
 /Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/DataLifecycleManagerApplication.java
 /Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/service/ArchiveService.java
 /Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/model/Customer.java
+/Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/controller/AuthController.java
 /Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/model/ArchivedCustomer.java
 /Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/repository/ArchivedCustomerRepository.java
+/Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/model/LoginRequest.java
 /Users/staceya/Desktop/CS Projects 2/Enterprise Data Lifecycle Manager/src/main/java/com/enterprise/datalifecyclemanager/service/AuditService.java
