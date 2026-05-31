@@ -16,10 +16,10 @@ public class ArchivedCustomer {
     @Column(nullable = false)
     private String lastName;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String ssn;
 
     @Column(nullable = false)
@@ -27,6 +27,29 @@ public class ArchivedCustomer {
 
     @Column(nullable = false)
     private String archiveReason;
+
+    // No-args constructor
+    public ArchivedCustomer() {}
+
+    // For DataInitializer: id, firstName, lastName, email, archiveReason
+    public ArchivedCustomer(Long id, String firstName, String lastName, String email, String archiveReason) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.archiveReason = archiveReason;
+    }
+
+    // All-args constructor
+    public ArchivedCustomer(Long id, String firstName, String lastName, String email, String ssn, LocalDateTime archivedAt, String archiveReason) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.ssn = ssn;
+        this.archivedAt = archivedAt;
+        this.archiveReason = archiveReason;
+    }
 
     // Getters and setters
     public Long getId() { return id; }

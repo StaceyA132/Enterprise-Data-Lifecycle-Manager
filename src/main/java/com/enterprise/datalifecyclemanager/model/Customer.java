@@ -1,3 +1,4 @@
+
 package com.enterprise.datalifecyclemanager.model;
 
 import jakarta.persistence.*;
@@ -26,7 +27,33 @@ public class Customer {
     private String status;
 
     @Column(nullable = false)
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    public Customer() {
+        if (this.createdAt == null) {
+            this.createdAt = LocalDateTime.now();
+        }
+    }
+
+    // For DataInitializer: id, firstName, lastName, email, status
+    public Customer(Long id, String firstName, String lastName, String email, String status) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.status = status;
+        this.createdAt = LocalDateTime.now();
+    }
+    
+    public Customer(Long id, String firstName, String lastName, String email, String ssn, String status, LocalDateTime createdAt) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.ssn = ssn;
+        this.status = status;
+        this.createdAt = createdAt;
+    }
 
     // Getters and setters
     public Long getId() { return id; }
@@ -42,5 +69,7 @@ public class Customer {
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
     public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = (createdAt != null) ? createdAt : LocalDateTime.now();
+    }
 }

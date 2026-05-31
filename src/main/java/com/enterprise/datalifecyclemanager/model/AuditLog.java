@@ -1,3 +1,5 @@
+
+
 package com.enterprise.datalifecyclemanager.model;
 
 import jakarta.persistence.*;
@@ -21,6 +23,24 @@ public class AuditLog {
 
     @Column(nullable = false)
     private String details;
+
+    public AuditLog() {}
+
+    // For DataInitializer: id, action, details, timestamp
+    public AuditLog(Long id, String action, String details, java.time.LocalDateTime timestamp) {
+        this.id = id;
+        this.action = action;
+        this.details = details;
+        this.timestamp = timestamp;
+    }
+
+    public AuditLog(Long id, String action, Long recordId, LocalDateTime timestamp, String details) {
+        this.id = id;
+        this.action = action;
+        this.recordId = recordId;
+        this.timestamp = timestamp;
+        this.details = details;
+    }
 
     // Getters and setters
     public Long getId() { return id; }

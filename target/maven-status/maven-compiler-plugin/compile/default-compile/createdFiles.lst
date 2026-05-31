@@ -19,3 +19,4 @@ com/enterprise/datalifecyclemanager/model/LoginRequest.class
 com/enterprise/datalifecyclemanager/service/ReportingService.class
 com/enterprise/datalifecyclemanager/config/CorsConfig.class
 com/enterprise/datalifecyclemanager/model/AuditLog.class
+com/enterprise/datalifecyclemanager/DataInitializer.class
